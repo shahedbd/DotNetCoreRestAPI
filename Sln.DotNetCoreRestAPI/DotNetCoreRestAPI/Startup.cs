@@ -25,6 +25,8 @@ namespace DotNetCoreRestAPI
             services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(connectionString));
 
             services.ConfigureCORS();
+            services.ConfigureJWT();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -36,6 +38,7 @@ namespace DotNetCoreRestAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

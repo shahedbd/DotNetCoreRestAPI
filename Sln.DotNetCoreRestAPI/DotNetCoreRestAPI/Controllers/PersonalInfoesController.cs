@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -23,7 +24,7 @@ namespace DotNetCoreRestAPI.Controllers
         }
 
         // GET: api/PersonalInfoes
-        [HttpGet]
+        [HttpGet, Authorize]
         public IEnumerable<PersonalInfo> GetPersonalInfo()
         {
             _logger.LogInformation("Get All PersonalInfo called. Total: " + _context.PersonalInfo.Count());

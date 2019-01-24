@@ -4,6 +4,13 @@
 Install-Package Microsoft.Extensions.Logging -Version 2.2.0
 Install-Package Microsoft.Extensions.Logging -Version 2.1.1
 
+JWT:
+Install-Package JWT -Version 4.0.0
+
+JWT details:
+https://code-maze.com/authentication-aspnetcore-jwt-1/
+
+
 
 Collection:
 https://www.getpostman.com/collections/c9ed33e885ea7e6a6c08
