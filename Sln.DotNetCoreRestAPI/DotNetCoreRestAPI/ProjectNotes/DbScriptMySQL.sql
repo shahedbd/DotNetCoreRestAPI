@@ -1,26 +1,16 @@
-/****** Object:  Table [dbo].[PersonalInfo]    Script Date: 1/24/2019 2:25:15 AM ******/
-/* SET ANSI_NULLS ON */
- 
-/* SET QUOTED_IDENTIFIER ON */
- 
-CREATE TABLE PersonalInfo(
-	`ID` bigint AUTO_INCREMENT NOT NULL,
-	`FirstName` nvarchar(150) NULL,
-	`LastName` nvarchar(150) NULL,
-	`DateOfBirth` datetime(3) NULL,
-	`City` nvarchar(150) NULL,
-	`Country` nvarchar(150) NULL,
-	`MobileNo` nvarchar(150) NULL,
-	`NID` nvarchar(150) NULL,
-	`Email` nvarchar(150) NULL,
-	`CreatedDate` datetime(3) NULL CONSTRAINT [DF__PersonalI__Creat__21B6055D]  DEFAULT ('0001-01-01T00:00:00.0000000'),
-	`LastModifiedDate` datetime(3) NULL CONSTRAINT [DF__PersonalI__LastU__22AA2996]  DEFAULT ('0001-01-01T00:00:00.0000000'),
-	`CreationUser` nvarchar(150) NULL,
-	`LastUpdateUser` nvarchar(150) NULL,
-	`Status` tinyint Unsigned NULL,
- CONSTRAINT `PK_PersonalInfo` PRIMARY KEY 
-(
-	`ID` ASC
-) 
-);
-
+CREATE TABLE `personal_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(150) DEFAULT NULL,
+  `last_name` varchar(150) DEFAULT NULL,
+  `date_of_birth` datetime DEFAULT NULL,
+  `city` varchar(150) DEFAULT NULL,
+  `country` varchar(150) DEFAULT NULL,
+  `mobile_no` varchar(45) DEFAULT NULL,
+  `nid` int(11) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `creation_user` varchar(150) DEFAULT NULL,
+  `last_update_user` varchar(150) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
