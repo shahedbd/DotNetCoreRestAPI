@@ -1,0 +1,50 @@
+﻿
+
+docker run -d --name name_your_container -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=dev123456' -e 'MSSQL_PID=Developer' -p 1433:1433 microsoft/mssql-server-linux:2017-latest
+
+mssql -u Developer -p dev123456
+
+
+docker run -d --name name_your_container -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@55w0rd' -e 'MSSQL_PID=Developer' -p 1433:1433 microsoft/mssql-server-linux:2017-latest
+
+mssql -u sa -p P@55w0rd
+
+
+
+microsoft/mssql-server-linux
+name_your_container
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=dev123456" -p 1433:1433 -v <host directory>:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2017-latest
+
+docker run -d --name dev -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=dev123456' -e 'MSSQL_PID=Developer' -p 1433:1433 microsoft/mssql-server-linux:2017-latest
+
+
+sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<YourStrong!Passw0rd>' \
+   -p 1433:1433 --name sql1 \
+   -d mcr.microsoft.com/mssql/server:2017-latest
+
+docker pull microsoft/mssql-server-linux
+
+
+--Works
+sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Dev@123456' \
+   -p 1433:1433 --name dev \
+   -d microsoft/mssql-server-linux
+
+
+
+mssql -u sa -p Dev@123456
+
+mssql -u sa -p Dev@123456
+
+server name: d8d88efa1663
+
+SELECT name, database_id, create_date FROM sys.databases; 
+
+
+
+
+microsoft/mssql-server-linux/d8d88efa1663
+
+
+

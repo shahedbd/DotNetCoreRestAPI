@@ -21,10 +21,13 @@ namespace DotNetCoreRestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["ConnectionStrings:MSSQLConn"];
-            services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(connectionString));
-
             services.ConfigureCORS();
+
+            var connectionString = Configuration["ConnectionStrings:MSSQLConn"];
+            //services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddDbContext<RepositoryContext>(options => options.UseMySql(connectionString));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
