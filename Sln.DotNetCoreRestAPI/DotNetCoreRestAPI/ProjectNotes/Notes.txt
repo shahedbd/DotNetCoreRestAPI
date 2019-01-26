@@ -14,7 +14,7 @@ https://code-maze.com/authentication-aspnetcore-jwt-1/
 
 Collection:
 https://www.getpostman.com/collections/c9ed33e885ea7e6a6c08
-
+https://www.getpostman.com/collections/c9ed33e885ea7e6a6c08
 
 OK => returns the 200 status code
 NotFound => returns the 404 status code
