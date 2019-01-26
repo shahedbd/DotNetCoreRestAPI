@@ -1,9 +1,8 @@
-﻿
-
-namespace DotNetCoreRestAPI.LIB
+﻿namespace DotNetCoreRestAPI.LIB
 {
     public interface IAuth
     {
-        string GenerateJSONWebToken();
+        string GenerateJSONWebToken(int ExpireIn);
+        string GenerateRefreshToken();
     }
 }

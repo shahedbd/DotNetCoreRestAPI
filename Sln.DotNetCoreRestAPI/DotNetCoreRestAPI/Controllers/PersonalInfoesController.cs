@@ -32,7 +32,7 @@ namespace DotNetCoreRestAPI.Controllers
         }
 
         // GET: api/PersonalInfoes/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public async Task<IActionResult> GetPersonalInfo([FromRoute] long id)
         {
             if (!ModelState.IsValid)
@@ -51,7 +51,7 @@ namespace DotNetCoreRestAPI.Controllers
         }
 
         // PUT: api/PersonalInfoes/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize]
         public async Task<IActionResult> PutPersonalInfo([FromRoute] long id, [FromBody] PersonalInfo personalInfo)
         {
             if (!ModelState.IsValid)
@@ -82,11 +82,12 @@ namespace DotNetCoreRestAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return CreatedAtAction("GetPersonalInfo", new { id = personalInfo.ID }, personalInfo);
+            //return NoContent();
         }
 
         // POST: api/PersonalInfoes
-        [HttpPost]
+        [HttpPost, Authorize]
         public async Task<IActionResult> PostPersonalInfo([FromBody] PersonalInfo personalInfo)
         {
             try
@@ -105,7 +106,7 @@ namespace DotNetCoreRestAPI.Controllers
         }
 
         // DELETE: api/PersonalInfoes/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize]
         public async Task<IActionResult> DeletePersonalInfo([FromRoute] long id)
         {
             if (!ModelState.IsValid)

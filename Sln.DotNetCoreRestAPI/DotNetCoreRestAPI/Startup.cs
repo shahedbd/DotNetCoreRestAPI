@@ -25,7 +25,10 @@ namespace DotNetCoreRestAPI
             services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(connectionString));
 
             services.ConfigureCORS();
-            services.ConfigureJWT();
+            services.ConfigureJWT(Configuration);
+
+            // Add application services.
+            services.AddTransient<IAuth, Auth>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
